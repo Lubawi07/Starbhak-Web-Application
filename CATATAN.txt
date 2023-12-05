@@ -1,0 +1,2 @@
+image yang berisikan burger dengan class "card", cara card agar tidak berdempatan adalah menggunakan properti margin dan padding agar card tidak saling berdempetan dengan card yang lain 
+untuk mendeklarasikan const dalam javascript pada html harus menggunakan id=  

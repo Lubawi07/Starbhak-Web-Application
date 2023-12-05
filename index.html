@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbhak Mart</title>
+    <link rel="icon" href="image/shopping-bag.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .printable-area {
+            display: block;
+          }
+          
+          @media print {
+            .printable-area {
+              display: none;
+            }
+          }
+          
+    </style>
+
+
+</head>
+<body>
+    
+    <header>
+      <h2>Starbhak Mart</h2>
+    </header>
+
+
+    <section>
+      <nav>
+        <ul>
+            <select class="select" id="Plih">
+                <option hidden="">Jenis Pemesanan</option>
+                <option value="">Take Away</option>
+                <option value="">Dine In</option>
+            </select>
+        </ul>
+        
+        <button class="mangojay">
+            <img class="user" 
+            src="image/profile.png" alt="user">
+            <span class="material-symbols-outlined"">
+        </span>Mang Ojay</button>
+
+
+<!--Invoice data html-->
+
+        <div style="overflow-y: scroll;" 
+        class= "invoice"
+        id="invoice">
+            <h3>Invoice</h3>
+            <ul id="invoice-list"></ul>
+            <p id="total">Total: Rp. 0</p>
+        </div>
+      </nav>
+
+
+
+<!--Item list yang berisikan makanan-->
+<div class="printable-area">
+      <article>
+        <nav class="navkanan">Item List 
+            <img class="tipe" 
+            src="image/exchange.png" alt="exchange">
+            <img class="menu" 
+            src="image/main-menu.png" alt="menu">
+
+            <!--inputsearch-->
+            
+            <input class="cari" type="text" id="search"  onkeypress="checkEnter(event)" placeholder="Cari makanan">
+            
+        </nav>
+        
+        <div  class="card1" onclick="generateInvoice('Burger', 22000 )" alt="Burger">
+            <img src="image/[CITYPNG.COM]HD McDonald's Burger Sandwich Transparent PNG - 3000x3000.png" alt="card image" class="card-img">
+            <div class="card-content">
+                <h3 style="font-size: 1rem;"
+                  class="card-title">Burger</h3>
+                  <p class="card-text">Rp 22.000</p>
+            </div>
+        </div>
+        <div class="card2" onclick="generateInvoice('Pizza', 10000)" alt="Pizza">
+            <img src="image/1357.jpg" alt="card image" class="card-img">
+            <div class="card-content">
+                <h3 style="font-size: 1rem;"
+                  class="card-title">Pizza</h3>
+                  <p class="card-text">Rp 10.000</p>
+            </div>
+        </div>
+        <div class="card3" onclick="generateInvoice('Cappucino', 5000)" alt="Cappucino">
+            <img src="image/cold-coffee.jpg" alt="card image" class="card-img">
+            <div class="card-content">
+                <h3 style="font-size: 1rem;"
+                  class="card-title">Cappucino</h3>
+                  <p class="card-text">Rp 5.000</p>
+            </div>
+        </div>
+        <div class="card4" onclick="generateInvoice('Spaghetti', 15000)">
+            <img src="image/authentic-italian-pasta.jpg" alt="card image" class="card-img">
+            <div class="card-content">
+                <h3 style="font-size: 1rem;"
+                  class="card-title">Spaghetti</h3>
+                  <p class="card-text">Rp 15.000</p>
+            </div>
+        </div>
+        <div class="card4" onclick="generateInvoice('Spaghetti', 15000)">
+            <img src="image/authentic-italian-pasta.jpg" alt="card image" class="card-img">
+            <div class="card-content">
+                <h3 style="font-size: 1rem;"
+                  class="card-title">Spaghetti</h3>
+                  <p class="card-text">Rp 15.000</p>
+            </div>
+        </div>
+        <div class="card4" onclick="generateInvoice('Spaghetti', 15000)">
+            <img src="image/authentic-italian-pasta.jpg" alt="card image" class="card-img">
+            <div class="card-content">
+                <h3 style="font-size: 1rem;"
+                  class="card-title">Spaghetti</h3>
+                  <p class="card-text">Rp 15.000</p>
+            </div>
+        </div>
+      </article>
+    </section>
+</div>
+
+<div class="printable-area">
+    <div class="fixed-bottom">
+    <div class="jajan">
+        <p>Discount: </p>
+        <p>Tax:</p>
+        <div class="amount"
+        style="background-color:blue">
+        <p style="color: white;">Total Amount: </p>
+    </div>
+ </div>
+<!--div dengan class "printable-area" adalah class yang digunakan area mana yang ingin di block dan disini saya menggunakan css nya printable-area untuk menutupi area yang tidak dibutuhkan dan itu akan sangat memudahkan kita untuk mengeprint, tinggal hide element yang tidak ingin di print -->
+
+    <footer  
+        class="footer">
+        <p>
+            Ready
+        </p>
+    </footer>
+</div>
+    
+
+<body> 
+    <button  class="button-print" onclick="print()" class="buy">
+        Payment CTRL+P
+        <img class="bayar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAORJREFUSEvtlT0KAjEQRt8eQhsLQQT/8Agewc7jWIngZTyFhZWlCoKF5d5CCSQik8TZrGZBcLskO/P2+2ZmU5D5KTLnp3HAAlgBowRlB2AOlKEYqeAEjBOSu1evwCwEkYC7jXD7bu0Syf02sAOGQBDyKcDEt4A90A9BUgHSPRffsUp6wBGYSslurVkUA5j9LnATFnttKgGp9fbiNYt+H2AGbw0MIlIuwBLY2vNki6oM3hmY1AVoRY913bO2WpH/AHXQvm5Rla7Rhu+1qzwFpu839s+oJQqdy7lo/sqs89VvY7Jf+g9W8kEZGtIWTAAAAABJRU5ErkJggg=="/>
+    </button>
+</body>
+
+
+
+
+   <script src="search.js"></script> 
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+ 

@@ -1,0 +1,229 @@
+style css
+body{
+    margin: 0;
+    padding: 0;
+
+}
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Style the header */
+header {
+    background-color: blue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 30px;
+    text-align:left;
+    font-style: oblique;
+    color: white;
+  }
+
+  /* Create two columns/boxes that floats next to each other */
+nav {
+    float: left;
+    width: 20%;
+    height: 150px; /* yang sering buat edit layoutnya only for demonstration, should be removed */
+    background: #ccc;
+    padding: 20px;
+  }
+  
+  /* Style the list inside the menu */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+.select{
+    background-color: blue;
+    color: white;
+    padding: 7%;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    width: 262px;
+    
+  }
+
+.mangojay{
+    background-color: blue;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    width: 262px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.user{
+    width: 40px;
+}
+
+
+
+article {
+  
+    border-style:solid;
+    border-color: black;
+    float: left;
+    padding: 20px;
+    width:80%;
+    background-color: #f1f1f1;
+    height: 240%; /* you can use px or % for your css style. Only for demonstration, should be removed */
+  }
+
+.navkanan{
+    background-color: blue;
+    float: left;
+    color: white;
+    width: 100% ;
+    height: 60px ;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.kirim{
+  background-color: wheat;
+  float: right;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cari{
+  float: right;
+}
+
+
+
+.menu{
+    width: 20px;
+    float: right;
+}
+.tipe{
+    width: 20px;
+    float: right;
+}
+
+
+
+
+
+.card1, .card2, .card3, .card4 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding:10px;
+    margin: 10px;
+    float: left;
+    position: relative;
+    width: 160px;
+    height: 260px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px; 
+    border-style: solid;
+   }
+   
+   .card-img {
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+   }
+   
+   .card-content {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+   }
+   
+   .card-title {
+    margin: 0;
+    font-size: 24px;
+    color: blue;
+   }
+   
+   .card-text {
+    font-size: 14px;
+    color:blue;
+}
+
+
+
+.invoice{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 262px;
+  height: 200px;
+  margin-top: 25px;
+  float:left;
+  background-color: aqua;
+}
+
+h3{
+  text-align: center;
+}
+
+
+
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+.jajan{
+  background-color: antiquewhite;
+  height: 20%;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.amount{
+  height: 10%;
+  width: 20%;
+  
+}
+
+.footer {
+  background-color: blue;
+  text-align: left;
+  color: white;
+  height: 10%;
+  margin-bottom: 10px; 
+}
+
+
+
+
+.button-print{
+  float: right;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: rgb(104, 104, 224);
+  width: 15%;
+  color: black;
+  
+}
+
+.bayar{
+  float: left;
+  width: 45px;
+  height: 20%;
+}
+
+.buy{
+  margin-top: -100px;
+}
+
+
+
+
+/*amount bagian tersulit yang bener2 harus di edit tapi bootstrap boleh dipake kah ? dalam ngoding
